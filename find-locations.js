@@ -29,7 +29,7 @@ async function getLatLng(city) {
     })
 }
 
-timer = 0;
+timer = 0; // global variable is a hack to control rate limit, added as an afterthought
 let sleep = require('util').promisify(setTimeout);
 
 return Promise.allSettled(CITIES.map(async (city) => {
