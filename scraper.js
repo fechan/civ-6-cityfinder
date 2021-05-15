@@ -1,3 +1,8 @@
+/**
+ * scraper.js scrapes each Civ wiki <civ>_cities_(Civ6) for the table containing the city names of
+ * each Civ. You can scrape the URLs from the category containing these using querySelectorAll in
+ * browser dev tools.
+ */
 const fetch = require('node-fetch');
 const fs = require('fs');
 const jsdom = require("jsdom");
@@ -65,8 +70,8 @@ async function fetchCities() {
       .then(parseCityList);
     cities = cities.map(cityName => {
       return {
-        "name": cityName.replace(/\[[0-9]\]/, ""),
-        "civ": link.match(/(?<=wiki\/)(.*)(?=_cities)/)[0]
+        "name": cityName.replace(/\[[0-9]\]/, ""), // some table cells have citations on them
+        "civ": link.match(/(?<=wiki\/)(.*)(?=_cities)/)[0] // gets "American/Zulu/Cree" from the URL
       }
     })
     allCities = allCities.concat(cities);
