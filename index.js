@@ -32,7 +32,7 @@ String.prototype.toColor = function() {
  */
 function markerOptions(civName) {
   return {
-    radius: 3,
+    radius: 4,
     color: civName.toColor(),
     fillColor: civName.toColor(),
     weight: 1,
