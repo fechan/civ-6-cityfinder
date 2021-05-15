@@ -36,18 +36,14 @@ return Promise.allSettled(CITIES.map(async (city) => {
   timer += 500;
   await sleep(timer);
   let [lat, lng] = await getLatLng(city.name);
-  console.log({
+  let city_data = {
     "name": city.name,
     "civ": city.civ,
     "lat": lat,
     "lng": lng
-  })
-  return {
-    "name": city.name,
-    "civ": city.civ,
-    "lat": lat,
-    "lng": lng
-  }
+  };
+  console.log(city_data);
+  return city_data;
 }))
   .then(promises => promises.filter(promiseOutcome => promiseOutcome.status === "fulfilled"))
   .then(promises => promises.map(promiseOutcome => promiseOutcome.value))
