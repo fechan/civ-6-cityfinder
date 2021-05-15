@@ -3,7 +3,7 @@ map.attributionControl.addAttribution('Created by <a href="https://fechan.github
 
 let basemap = L.tileLayer('https://tiles.wmflabs.org/osm-no-labels/{z}/{x}/{y}.png', {
   maxZoom: 19,
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  attribution: 'basemap &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
 basemap.addTo(map);
 
